@@ -25,7 +25,7 @@ void ItemToPurchase::SetName(string n){
 }
 
 //Get Name
-string ItemToPurchase::GetName(){
+string ItemToPurchase::GetName() const{
   return itemName;
 }
 
@@ -35,7 +35,7 @@ void ItemToPurchase::SetPrice(int p){
 }
 
 //Get Price
-int ItemToPurchase::GetPrice(){
+int ItemToPurchase::GetPrice() const{
   return itemPrice;
 }
 
@@ -45,7 +45,7 @@ void ItemToPurchase::SetQuantity(int q){
 }
 
 //Get Quantity
-int ItemToPurchase::GetQuantity(){
+int ItemToPurchase::GetQuantity() const{
   return itemQuantity;
 }
 
@@ -55,7 +55,7 @@ void ItemToPurchase::SetDescription(string d){
 }
 
 //Get Description
-string ItemToPurchase::GetDescription(){
+string ItemToPurchase::GetDescription() const{
   return itemDescription;
 }
 
