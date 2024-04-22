@@ -19,8 +19,26 @@ void PrintMenu() {
 }
 
 void ExecuteMenu(char option, ShoppingCart& theCart) {
-   /* Type your code here */
-   
+   switch(option){
+      case 'a': {
+         break;
+      }
+      case 'd': {
+         break;
+      }
+      case 'c': {
+         break;
+      }
+      case 'i': {
+         break;
+      }
+      case 'o': {
+         break;
+      }
+      case 'q': 
+         break;
+      default: 
+         cout << "Invalid option. Re-enter.";
 }
 
 int main() {
