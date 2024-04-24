@@ -18,7 +18,26 @@ void ExecuteMenu(char option, ShoppingCart& theCart) {
 }
 
 int main() {
-   /* Type your code here */
+   char option = '';
+   string name, date;
+   cout << "Enter customer's name:" << endl;
+   cin >> name;
+   cout << "Enter today's date:" << endl;
+   cin >> date;
+   
+   ShoppingCart userCart = new ShoppingCart(name, date);
+
+   cout << endl;
+   cout << "Customer name: " << userCart.GetCustomerName() << end;
+   cout << "Today's date: " << userCart.GetDate() << endl;
+   
+   while(option != 'q'){
+      PrintMenu();
+      cout << endl;
+      cout << "Choose an option:" <<endl;
+      cin >> option;
+      ExecuteMenu(option, userCart);
+   }
    
    return 0;
 }
