@@ -63,34 +63,32 @@ int ShoppingCart::GetNumItemsInCart(){
 double ShoppingCart::GetCostOfCart(){
   int sum = 0;
   for(ItemToPurchase item : cartItems){
-    sum += item.GetPrice();
+    sum += item.GetPrice() * item.GetQuantity();
   }
 
   return sum;
 }
 
 void ShoppingCart::PrintTotal(){
-  if(cartItems.empty()){
-    cout << "SHOPPING CART IS EMPTY" << endl;
-  }else{
-    cout << customerName << "'s Shopping Cart - " << currentDate << endl;
-    cout << "Number of items: " << cartItems.size() << endl << endl;
-    for(ItemToPurchase item : cartItems){
-      item.PrintItemCost();
-    }
-    cout << endl << "Total: $" << GetCostOfCart() << endl;
+  cout << customerName << "'s Shopping Cart - " << currentDate << endl;
+  cout << "Number of items: " << cartItems.size() << endl << endl;
+  for(ItemToPurchase item : cartItems){
+    item.PrintItemCost();
   }
+  if(cartItems.empty()){
+    cout << endl << "SHOPPING CART IS EMPTY" << endl;
+  }
+  cout << endl << "Total: $" << GetCostOfCart() << endl;
 }
 
 void ShoppingCart::PrintDescriptions(){
+  cout << customerName << "'s Shopping Cart - " << currentDate << endl << endl;
+  cout << "Item Descriptions" << endl;
+  for(ItemToPurchase item : cartItems){
+    item.PrintItemCost();
+  }
   if(cartItems.empty()){
     cout << "SHOPPING CART IS EMPTY" << endl;
-  }else{
-    cout << customerName << "'s Shopping Cart - " << currentDate << endl << endl;
-    cout << "Item Descriptions" << endl;
-    for(ItemToPurchase item : cartItems){
-      item.PrintItemCost();
-    }
   }
 }
   
