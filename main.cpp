@@ -80,20 +80,28 @@ int main() {
    char option;
    string name, date;
    cout << "Enter customer's name:" << endl;
-   cin >> name;
+   getline(cin, name);
    cout << "Enter today's date:" << endl;
-   cin >> date;
+   getline(cin, date);
    
-   ShoppingCart userCart = new ShoppingCart(name, date);
+   ShoppingCart userCart = ShoppingCart(name, date);
 
    cout << endl;
    cout << "Customer name: " << userCart.GetCustomerName() << endl;
    cout << "Today's date: " << userCart.GetDate() << endl;
+
+   PrintMenu();
+   cout << endl;
+   cout << "Choose an option:" << endl;
+   cin >> option;
+   ExecuteMenu(option, userCart);
    
    while(option != 'q'){
-      PrintMenu();
-      cout << endl;
-      cout << "Choose an option:" <<endl;
+      if(option == 'a' || option == 'd' || option == 'c' || option == 'i' || option == 'o'){
+         PrintMenu();
+         cout << endl;
+      }
+      cout << "Choose an option:" << endl;
       cin >> option;
       ExecuteMenu(option, userCart);
    }
