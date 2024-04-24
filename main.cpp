@@ -69,10 +69,11 @@ void ExecuteMenu(char option, ShoppingCart& theCart) {
          break;
       default: 
          cout << "Invalid option. Re-enter.";
+   }
 };
 
 int main() {
-   char option = '';
+   char option;
    string name, date;
    cout << "Enter customer's name:" << endl;
    cin >> name;
