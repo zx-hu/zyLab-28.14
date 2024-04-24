@@ -40,15 +40,7 @@ void ShoppingCart::ModifyItem(ItemToPurchase item){
   bool found = false;
   for(unsigned int i = 0; i<cartItems.size(); i++){
     if(cartItems.at(i).GetName() == item.GetName()){
-      if(item.GetDescription() != "none"){
-        cartItems.at(i).SetDescription(item.GetDescription());
-      }
-      if(item.GetPrice() != 0){
-        cartItems.at(i).SetPrice(item.GetPrice());
-      }
-      if(item.GetQuantity() != 0){
-        cartItems.at(i).SetQuantity(item.GetQuantity());
-      }
+      cartItems.at(i).SetQuantity(item.GetQuantity());
     }
   }
   if(found == false){
@@ -57,7 +49,12 @@ void ShoppingCart::ModifyItem(ItemToPurchase item){
 }
 
 int ShoppingCart::GetNumItemsInCart(){
-  return cartItems.size();
+  int sum = 0;
+  for(ItemToPurchase item : cartItems){
+    sum += item.GetQuantity();
+  }
+
+  return sum;
 }
 
 double ShoppingCart::GetCostOfCart(){
@@ -71,7 +68,7 @@ double ShoppingCart::GetCostOfCart(){
 
 void ShoppingCart::PrintTotal(){
   cout << customerName << "'s Shopping Cart - " << currentDate << endl;
-  cout << "Number of items: " << cartItems.size() << endl << endl;
+  cout << "Number of Items: " << GetNumItemsInCart() << endl << endl;
   for(ItemToPurchase item : cartItems){
     item.PrintItemCost();
   }
@@ -85,7 +82,7 @@ void ShoppingCart::PrintDescriptions(){
   cout << customerName << "'s Shopping Cart - " << currentDate << endl << endl;
   cout << "Item Descriptions" << endl;
   for(ItemToPurchase item : cartItems){
-    item.PrintItemCost();
+    item.PrintItemDescription();
   }
   if(cartItems.empty()){
     cout << "SHOPPING CART IS EMPTY" << endl;
