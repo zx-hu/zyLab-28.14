@@ -16,7 +16,7 @@ void PrintMenu() {
    cout << "o - Output shopping cart" << endl;
    cout << "q - Quit" <<  endl;
    
-}
+};
 
 void ExecuteMenu(char option, ShoppingCart& theCart) {
    string name, description;
@@ -33,7 +33,7 @@ void ExecuteMenu(char option, ShoppingCart& theCart) {
          cout << "Enter the item quantity:" << endl;
          cin >> quantity;
          ItemToPurchase item = new ItemToPurchase(name, description, price, quantity);
-         theCart.AddItem();
+         theCart.AddItem(item);
          break;
       }
       case 'd': {
@@ -69,7 +69,7 @@ void ExecuteMenu(char option, ShoppingCart& theCart) {
          break;
       default: 
          cout << "Invalid option. Re-enter.";
-}
+};
 
 int main() {
    char option = '';

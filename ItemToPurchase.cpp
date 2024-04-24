@@ -64,7 +64,7 @@ void ItemToPurchase::PrintItemCost(){
   cout << itemName << "  " << itemQuantity << " @ $" << itemPrice << " = $" << subtotal << endl;
 }
 
-void ItemToPurchase::PrintItemDescrition(){
+void ItemToPurchase::PrintItemDescription(){
   cout << itemName << ": " << itemDescription << endl;
 }
 
