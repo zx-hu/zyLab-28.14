@@ -61,14 +61,14 @@ void ExecuteMenu(char option, ShoppingCart& theCart) {
          break;
       }
       case 'o': {
-         cout << "OUTPUT SHOPPPING CART" << endl;
+         cout << "OUTPUT SHOPPING CART" << endl;
          theCart.PrintTotal();
          break;
       }
       case 'q': 
          break;
       default: 
-         cout << "Invalid option. Re-enter.";
+         break;
    }
 };
 
