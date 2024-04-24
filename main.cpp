@@ -30,11 +30,19 @@ int main() {
    cout << endl;
    cout << "Customer name: " << userCart.GetCustomerName() << end;
    cout << "Today's date: " << userCart.GetDate() << endl;
+
+   PrintMenu();
+   cout << endl;
+   cout << "Choose an option:" << endl;
+   cin >> option;
+   ExecuteMenu(option, userCart);
    
    while(option != 'q'){
-      PrintMenu();
-      cout << endl;
-      cout << "Choose an option:" <<endl;
+      if(option == 'a' || option == 'd' || option == 'c' || option == 'i' || option == 'o'){
+         PrintMenu();
+         cout << endl;
+      }
+      cout << "Choose an option:" << endl;
       cin >> option;
       ExecuteMenu(option, userCart);
    }
