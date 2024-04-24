@@ -21,11 +21,11 @@ int main() {
    char option = '';
    string name, date;
    cout << "Enter customer's name:" << endl;
-   cin >> name;
+   getline(cin, name);
    cout << "Enter today's date:" << endl;
-   cin >> date;
+   getline(cin, date);
    
-   ShoppingCart userCart = new ShoppingCart(name, date);
+   ShoppingCart userCart = ShoppingCart(name, date);
 
    cout << endl;
    cout << "Customer name: " << userCart.GetCustomerName() << end;
