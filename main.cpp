@@ -32,11 +32,7 @@ void ExecuteMenu(char option, ShoppingCart& theCart) {
          cin >> price;
          cout << "Enter the item quantity:" << endl;
          cin >> quantity;
-         ItemToPurchase item;
-         item.SetName(name);
-         item.SetDescription(description);
-         item.SetPrice(price);
-         item.SetQuantity(quantity);
+         ItemToPurchase item = ItemToPurchase(name, description, price, quantity);
          theCart.AddItem(item);
          break;
       }
