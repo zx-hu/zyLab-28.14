@@ -61,11 +61,9 @@ string ItemToPurchase::GetDescription() const{
 
 void ItemToPurchase::PrintItemCost(){
   int subtotal = itemQuantity*itemPrice;
-  cout << itemName << "  " << itemQuantity << " @ $" << itemPrice << " = $" << subtotal << endl;
+  cout << itemName << " " << itemQuantity << " @ $" << itemPrice << " = $" << subtotal << endl;
 }
 
 void ItemToPurchase::PrintItemDescription(){
   cout << itemName << ": " << itemDescription << endl;
 }
-
-
