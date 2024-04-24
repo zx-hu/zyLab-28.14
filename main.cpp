@@ -69,10 +69,11 @@ void ExecuteMenu(char option, ShoppingCart& theCart) {
          break;
       default: 
          cout << "Invalid option. Re-enter.";
+   }
 };
 
 int main() {
-   char option = '';
+   char option;
    string name, date;
    cout << "Enter customer's name:" << endl;
    cin >> name;
@@ -82,7 +83,7 @@ int main() {
    ShoppingCart userCart = new ShoppingCart(name, date);
 
    cout << endl;
-   cout << "Customer name: " << userCart.GetCustomerName() << end;
+   cout << "Customer name: " << userCart.GetCustomerName() << endl;
    cout << "Today's date: " << userCart.GetDate() << endl;
    
    while(option != 'q'){

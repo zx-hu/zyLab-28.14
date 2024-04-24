@@ -27,7 +27,7 @@ void ShoppingCart::RemoveItem(string name){
   bool found = false;
   for(unsigned int i = 0; i<cartItems.size(); i++){
     if(cartItems.at(i).GetName() == name){
-      cartItems.erase(i);
+      cartItems.erase(cartItems.begin()+i);
       found = true;
     }  
   }
@@ -41,13 +41,13 @@ void ShoppingCart::ModifyItem(ItemToPurchase item){
   for(unsigned int i = 0; i<cartItems.size(); i++){
     if(cartItems.at(i).GetName() == item.GetName()){
       if(item.GetDescription() != "none"){
-        cartItems.at(i).SetDescription(item.GetDesciption());
+        cartItems.at(i).SetDescription(item.GetDescription());
       }
       if(item.GetPrice() != 0){
         cartItems.at(i).SetPrice(item.GetPrice());
       }
       if(item.GetQuantity() != 0){
-        cartItems.at(i).SetQuantity(item.SetQuantity());
+        cartItems.at(i).SetQuantity(item.GetQuantity());
       }
     }
   }
