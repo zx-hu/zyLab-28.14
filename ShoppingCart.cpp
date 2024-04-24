@@ -24,7 +24,7 @@ void ShoppingCart::AddItem(ItemToPurchase item){
 }
 
 void ShoppingCart::RemoveItem(string name){
-  boolean found = false;
+  bool found = false;
   for(unsigned int i = 0; i<cartItems.size(); i++){
     if(cartItems.at(i).GetName() == name){
       cartItems.at(i).erase();
@@ -37,7 +37,7 @@ void ShoppingCart::RemoveItem(string name){
 }
 
 void ShoppingCart::ModifyItem(ItemToPurchase item){
-  boolean found = false;
+  bool found = false;
   for(unsigned int i = 0; i<cartItems.size(); i++){
     if(cartItems.at(i).GetName) == item.GetName()){
       if(item.GetDescription() != "none"){
