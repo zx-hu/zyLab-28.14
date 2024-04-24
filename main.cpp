@@ -23,9 +23,10 @@ void ExecuteMenu(char option, ShoppingCart& theCart) {
    int price, quantity;
    switch(option){
       case 'a': {
+         cin.ignore();
          cout << "ADD ITEM TO CART" << endl;
          cout <<  "Enter the item name:" << endl;
-         getline(cin,name);
+         getline(cin, name);
          cout << "Enter the item description:" << endl;
          getline(cin, description);
          cout << "Enter the item price:" << endl;
@@ -37,17 +38,19 @@ void ExecuteMenu(char option, ShoppingCart& theCart) {
          break;
       }
       case 'd': {
+         cin.ignore();
          cout << "REMOVE ITEM FROM CART" << endl;
-         cout << "Enter name of item to remove" << endl;
+         cout << "Enter name of item to remove:" << endl;
          getline(cin, name);
          theCart.RemoveItem(name);
          break;
       }
       case 'c': {
+         cin.ignore();
          cout << "CHANGE ITEM QUANTITY" << endl;
          cout << "Enter item name:" << endl;
          getline(cin, name);
-         cout << "Enter the new quantity" << endl;
+         cout << "Enter the new quantity:" << endl;
          cin >> quantity;
          ItemToPurchase item;
          item.SetName(name);
@@ -56,7 +59,7 @@ void ExecuteMenu(char option, ShoppingCart& theCart) {
          break;
       }
       case 'i': {
-         cout << "OUTPUT ITEM DESCRIPTIONS" << endl;
+         cout << "OUTPUT ITEMS' DESCRIPTIONS" << endl;
          theCart.PrintDescriptions();
          break;
       }
@@ -84,16 +87,18 @@ int main() {
 
    cout << endl;
    cout << "Customer name: " << userCart.GetCustomerName() << endl;
-   cout << "Today's date: " << userCart.GetDate() << endl;
-
+   cout << "Today's date: " << userCart.GetDate() << endl << endl;
+   
    PrintMenu();
    cout << endl;
+   
    cout << "Choose an option:" << endl;
    cin >> option;
    ExecuteMenu(option, userCart);
    
    while(option != 'q'){
       if(option == 'a' || option == 'd' || option == 'c' || option == 'i' || option == 'o'){
+         cout << endl;
          PrintMenu();
          cout << endl;
       }
