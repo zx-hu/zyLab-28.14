@@ -39,7 +39,7 @@ void ShoppingCart::RemoveItem(string name){
 void ShoppingCart::ModifyItem(ItemToPurchase item){
   bool found = false;
   for(unsigned int i = 0; i<cartItems.size(); i++){
-    if(cartItems.at(i).GetName) == item.GetName()){
+    if(cartItems.at(i).GetName()) == item.GetName()){
       if(item.GetDescription() != "none"){
         cartItems.at(i).SetDescription(item.GetDesciption());
       }
@@ -78,7 +78,7 @@ void ShoppingCart::PrintTotal(){
     for(ItemToPurchase item : cartItems){
       item.PrintItemCost();
     }
-    cout << endl << "Total: $" << cartItems.GetCostOfCart() << endl;
+    cout << endl << "Total: $" << GetCostOfCart() << endl;
   }
 }
 
