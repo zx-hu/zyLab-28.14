@@ -48,7 +48,7 @@ void ExecuteMenu(char option, ShoppingCart& theCart) {
       case 'c': {
          cin.ignore();
          cout << "CHANGE ITEM QUANTITY" << endl;
-         cout << "Enter item name:" << endl;
+         cout << "Enter the item name:" << endl;
          getline(cin, name);
          cout << "Enter the new quantity:" << endl;
          cin >> quantity;
