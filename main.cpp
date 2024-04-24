@@ -83,7 +83,7 @@ int main() {
    ShoppingCart userCart = new ShoppingCart(name, date);
 
    cout << endl;
-   cout << "Customer name: " << userCart.GetCustomerName() << end;
+   cout << "Customer name: " << userCart.GetCustomerName() << endl;
    cout << "Today's date: " << userCart.GetDate() << endl;
    
    while(option != 'q'){
