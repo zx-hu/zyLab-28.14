@@ -27,7 +27,7 @@ void ShoppingCart::RemoveItem(string name){
   bool found = false;
   for(unsigned int i = 0; i<cartItems.size(); i++){
     if(cartItems.at(i).GetName() == name){
-      cartItems.erase(i);
+      cartItems.erase(cartItems.begin()+i);
       found = true;
     }  
   }
